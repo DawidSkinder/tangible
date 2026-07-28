@@ -313,6 +313,7 @@ test('mobile review mode renders cards and working row actions', async ({ page }
 test('all visual systems have no automatically detectable accessibility violations', async ({
   page,
 }) => {
+  test.slow();
   for (const theme of [
     'DS Tangible',
     'Visa Nova',

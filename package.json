@@ -15,7 +15,7 @@
     "typecheck": "tsc --noEmit",
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
-    "test:e2e:ci": "playwright test --grep-invert @visual",
+    "test:e2e:ci": "playwright test --grep-invert '@visual|@webkit'",
     "test:webkit": "playwright test --project desktop-webkit",
     "test:visual": "playwright test --grep @visual",
     "privacy:check": "node tests/check-search-privacy.mjs",
