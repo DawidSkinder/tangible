@@ -61,13 +61,17 @@ const paths: Record<IconName, string> = {
   warning: '<path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5M12 17h.01"/>',
 };
 
+export function resolveIconAsset(filename: string, baseUri = document.baseURI): string {
+  return new URL(`assets/${filename}`, baseUri).href;
+}
+
 const assetIcons: Partial<Record<IconName, string>> = {
-  ai: './assets/icon-ai.svg',
-  'cta-arrow': './assets/icon-cta-arrow.svg',
-  'dropdown-arrow': './assets/icon-dropdown-arrow.svg',
-  'pagination-left': './assets/icon-pagination-left.svg',
-  'pagination-right': './assets/icon-pagination-right.svg',
-  tools: './assets/icon-design-system.svg',
+  ai: resolveIconAsset('icon-ai.svg'),
+  'cta-arrow': resolveIconAsset('icon-cta-arrow.svg'),
+  'dropdown-arrow': resolveIconAsset('icon-dropdown-arrow.svg'),
+  'pagination-left': resolveIconAsset('icon-pagination-left.svg'),
+  'pagination-right': resolveIconAsset('icon-pagination-right.svg'),
+  tools: resolveIconAsset('icon-design-system.svg'),
 };
 
 export function icon(name: IconName, size = 18): string {
