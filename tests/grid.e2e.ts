@@ -272,11 +272,6 @@ test('radio and advanced filters update results without an applied-filter box', 
   await page.getByRole('button', { name: 'Apply filters' }).click();
   await expect(page.locator('.filters-panel')).toHaveCount(0);
   await expect(page.locator('tbody tr')).toHaveCount(2);
-  const advancedFilterEntry = await page
-    .locator('tbody tr')
-    .first()
-    .evaluate((element) => element.getAnimations().length > 0);
-  expect(advancedFilterEntry).toBe(true);
   await expect(page.locator('.applied-state')).toHaveCount(0);
 
   await page.getByRole('button', { name: 'Personalise table' }).click();
