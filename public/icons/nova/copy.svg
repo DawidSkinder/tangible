@@ -1,0 +1,17 @@
+<!--
+ *              © 2025-2026 Visa
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<svg class="v-icon v-icon-generic v-icon-high v-icon-copy" width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path class="v-icon-primary" d="M10.5 10C11.329 10 12 10.672 12 11.5C12 12.328 11.329 13 10.5 13H7.5C7.225 13 7 13.224 7 13.5V44.5C7 44.776 7.225 45 7.5 45H29.5C29.775 45 30 44.776 30 44.5V42.5C30 41.672 30.671 41 31.5 41C32.329 41 33 41.672 33 42.5V44.5C33 46.432 31.433 48 29.5 48H7.5C5.567 48 4 46.432 4 44.5V13.5C4 11.568 5.567 10 7.5 10H10.5ZM32.7559 0C33.6899 0 34.5852 0.373086 35.2432 1.03809L42.9863 8.86035C43.6361 9.51532 44 10.4004 44 11.3232V34.5C44 36.432 42.433 38 40.5 38H18.5C16.567 38 15 36.432 15 34.5V3.5C15 1.568 16.567 0 18.5 0H32.7559ZM18.5 3C18.225 3 18 3.224 18 3.5V34.5C18 34.776 18.225 35 18.5 35H40.5C40.775 35 41 34.776 41 34.5V12H33.5C32.671 12 32 11.328 32 10.5V3H18.5ZM35 9H39L35 5V9Z"/></svg>

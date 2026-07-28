@@ -1,0 +1,42 @@
+{
+  "name": "tangible-positions-grid-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Interactive reference implementation of the Tangible advisor positions grid design assignment.",
+  "scripts": {
+    "setup": "npm ci && npx playwright install webkit",
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "format": "prettier --write . --ignore-unknown",
+    "format:check": "prettier --check . --ignore-unknown",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
+    "test:e2e:ci": "playwright test --grep-invert @visual",
+    "test:webkit": "playwright test --project desktop-webkit",
+    "test:visual": "playwright test --grep @visual",
+    "privacy:check": "node tests/check-search-privacy.mjs",
+    "release:audit": "node scripts/audit-release.mjs",
+    "validate:inner": "npm run format:check && npm run lint && npm run typecheck && npm run test:unit",
+    "validate:ci": "npm run validate:inner && npm run build && npm run release:audit && npm run privacy:check && npm run test:e2e:ci",
+    "validate": "npm run validate:inner && npm run build && npm run release:audit && npm run privacy:check && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.12.1",
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.62.0",
+    "@types/node": "26.1.2",
+    "@typescript-eslint/eslint-plugin": "8.65.0",
+    "@typescript-eslint/parser": "8.65.0",
+    "eslint": "10.8.0",
+    "globals": "17.8.0",
+    "jsdom": "29.1.1",
+    "prettier": "3.9.6",
+    "typescript": "5.9.3",
+    "vite": "8.1.5",
+    "vitest": "4.1.10"
+  }
+}

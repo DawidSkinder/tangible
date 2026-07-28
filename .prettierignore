@@ -1,0 +1,16 @@
+node_modules
+dist
+playwright-report
+test-results
+tmp
+package-lock.json
+- KNOWLEDGE
+docs/assets
+dist/
+node_modules/
+playwright-report/
+test-results/
+coverage/
+public/fonts/
+public/icons/
+tests/grid.e2e.ts-snapshots/

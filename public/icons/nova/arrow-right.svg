@@ -1,0 +1,17 @@
+<!--
+ *              © 2025-2026 Visa
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ -->
+<svg class="v-icon v-icon-generic v-icon-high v-icon-arrow-right" width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path class="v-icon-primary" d="M29.4121 13.4668C29.9826 12.8661 30.9325 12.8416 31.5332 13.4121L41.5332 22.9092C42.1556 23.5005 42.1555 24.4926 41.5332 25.084L31.5332 34.5869C30.9327 35.1575 29.9838 35.1336 29.4131 34.5332C28.8425 33.9327 28.8664 32.9838 29.4668 32.4131L36.7412 25.5H7.5C6.67157 25.5 6 24.8284 6 24C6 23.1716 6.67157 22.5 7.5 22.5H36.7461L29.4668 15.5879C28.8661 15.0174 28.8416 14.0675 29.4121 13.4668Z"/></svg>

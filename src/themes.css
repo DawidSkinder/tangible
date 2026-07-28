@@ -1,0 +1,2697 @@
+/*
+ * Nova, Carbon, Cloudscape, and Coinbase CDS are independent visual systems over
+ * the same product model.
+ * Every rule stays scoped to a non-Tangible theme so styles.css remains the
+ * untouched DS Tangible source of truth.
+ */
+
+@font-face {
+  font-family: 'Open Sans Tangible Theme';
+  src: url('/fonts/OpenSans-Latin-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans Tangible Theme';
+  src: url('/fonts/OpenSans-Latin-Semibold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans Tangible Theme';
+  src: url('/fonts/IBMPlexSans-Latin-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans Tangible Theme';
+  src: url('/fonts/IBMPlexSans-Latin-Semibold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+.design-system-anchor:has(.design-system-control.is-open) {
+  z-index: 100;
+}
+
+html[data-ui-theme='nova'],
+body[data-ui-theme='nova'] {
+  background: #ffffff;
+}
+
+html[data-ui-theme='carbon'],
+body[data-ui-theme='carbon'] {
+  background: #f4f4f4;
+}
+
+html[data-ui-theme='cloudscape'],
+body[data-ui-theme='cloudscape'] {
+  background: #f2f3f3;
+}
+
+html[data-ui-theme='coinbase'],
+body[data-ui-theme='coinbase'] {
+  background: #ffffff;
+}
+
+.app-root[data-ui-theme='nova'] {
+  --dark: #252525;
+  --dark-strong: #000000;
+  --green: #1e78a8;
+  --green-hover: #175d82;
+  --light-green: #e5f3fa;
+  --surface: #ffffff;
+  --surface-soft: #f7f7f7;
+  --control: #d7d7d7;
+  --muted: #5c5c5c;
+  --line: #d7d7d7;
+  --blue: #1e78a8;
+  --yellow: #cca002;
+  --blocked: #777777;
+  --radius: 2px;
+  --theme-font-family: 'Open Sans Tangible Theme', Arial, sans-serif;
+  --theme-focus: #1e78a8;
+  --theme-focus-ring: rgba(30, 120, 168, 0.22);
+  --theme-interactive: #155d7d;
+  --theme-interactive-hover: #0f4b67;
+  --theme-layer: #ffffff;
+  --theme-layer-accent: #f2f2f2;
+  --theme-layer-hover: #ebf5fa;
+  --theme-border-strong: #777777;
+  --theme-success: #0e6f06;
+  --theme-success-soft: #e8f5e6;
+  --theme-warning: #6f5600;
+  --theme-warning-soft: #fff6cf;
+  --theme-error: #b80600;
+  --theme-error-soft: #fde8e7;
+  --theme-info: #155d7d;
+  --theme-info-soft: #e5f3fa;
+  --theme-inverse: #000000;
+  --theme-inverse-text: #ffffff;
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.14);
+  --shadow-overlay: 0 16px 40px rgba(0, 0, 0, 0.2);
+  --theme-icon-ai: url('/icons/nova/ai.svg');
+  --theme-icon-arrow-down: url('/icons/nova/arrow-down.svg');
+  --theme-icon-arrow-left: url('/icons/nova/arrow-left.svg');
+  --theme-icon-arrow-right: url('/icons/nova/arrow-right.svg');
+  --theme-icon-arrow-up-right: url('/icons/nova/arrow-up-right.svg');
+  --theme-icon-check: url('/icons/nova/check.svg');
+  --theme-icon-chevrons: url('/icons/nova/chevrons.svg');
+  --theme-icon-clock: url('/icons/nova/clock.svg');
+  --theme-icon-close: url('/icons/nova/close.svg');
+  --theme-icon-copy: url('/icons/nova/copy.svg');
+  --theme-icon-cta-arrow: url('/icons/nova/cta-arrow.svg');
+  --theme-icon-desktop: url('/icons/nova/desktop.svg');
+  --theme-icon-download: url('/icons/nova/download.svg');
+  --theme-icon-dropdown-arrow: url('/icons/nova/dropdown-arrow.svg');
+  --theme-icon-external-link: url('/icons/nova/external-link.svg');
+  --theme-icon-filter: url('/icons/nova/filter.svg');
+  --theme-icon-info: url('/icons/nova/info.svg');
+  --theme-icon-mobile: url('/icons/nova/mobile.svg');
+  --theme-icon-more: url('/icons/nova/more.svg');
+  --theme-icon-pagination-left: url('/icons/nova/pagination-left.svg');
+  --theme-icon-pagination-right: url('/icons/nova/pagination-right.svg');
+  --theme-icon-print: url('/icons/nova/print.svg');
+  --theme-icon-search: url('/icons/nova/search.svg');
+  --theme-icon-settings: url('/icons/nova/settings.svg');
+  --theme-icon-sort: url('/icons/nova/sort.svg');
+  --theme-icon-tools: url('/icons/nova/tools.svg');
+  --theme-icon-warning: url('/icons/nova/warning.svg');
+  color: var(--dark);
+  font-family: var(--theme-font-family);
+}
+
+.app-root[data-ui-theme='carbon'] {
+  --dark: #161616;
+  --dark-strong: #000000;
+  --green: #0f62fe;
+  --green-hover: #0043ce;
+  --light-green: #d0e2ff;
+  --surface: #f4f4f4;
+  --surface-soft: #e0e0e0;
+  --control: #c6c6c6;
+  --muted: #525252;
+  --line: #c6c6c6;
+  --blue: #0f62fe;
+  --yellow: #f1c21b;
+  --blocked: #8d8d8d;
+  --radius: 0px;
+  --theme-font-family: 'IBM Plex Sans Tangible Theme', 'Helvetica Neue', Arial, sans-serif;
+  --theme-focus: #0f62fe;
+  --theme-focus-ring: rgba(15, 98, 254, 0.2);
+  --theme-interactive: #0f62fe;
+  --theme-interactive-hover: #0043ce;
+  --theme-layer: #ffffff;
+  --theme-layer-accent: #e0e0e0;
+  --theme-layer-hover: #e8e8e8;
+  --theme-border-strong: #8d8d8d;
+  --theme-success: #0e6027;
+  --theme-success-soft: #defbe6;
+  --theme-warning: #684e00;
+  --theme-warning-soft: #fcf4d6;
+  --theme-error: #da1e28;
+  --theme-error-soft: #fff1f1;
+  --theme-info: #0043ce;
+  --theme-info-soft: #edf5ff;
+  --theme-inverse: #161616;
+  --theme-inverse-text: #ffffff;
+  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.24);
+  --shadow-overlay: 0 12px 32px rgba(0, 0, 0, 0.28);
+  --theme-icon-ai: url('/icons/carbon/ai.svg');
+  --theme-icon-arrow-down: url('/icons/carbon/arrow-down.svg');
+  --theme-icon-arrow-left: url('/icons/carbon/arrow-left.svg');
+  --theme-icon-arrow-right: url('/icons/carbon/arrow-right.svg');
+  --theme-icon-arrow-up-right: url('/icons/carbon/arrow-up-right.svg');
+  --theme-icon-check: url('/icons/carbon/check.svg');
+  --theme-icon-chevrons: url('/icons/carbon/chevrons.svg');
+  --theme-icon-clock: url('/icons/carbon/clock.svg');
+  --theme-icon-close: url('/icons/carbon/close.svg');
+  --theme-icon-copy: url('/icons/carbon/copy.svg');
+  --theme-icon-cta-arrow: url('/icons/carbon/cta-arrow.svg');
+  --theme-icon-desktop: url('/icons/carbon/desktop.svg');
+  --theme-icon-download: url('/icons/carbon/download.svg');
+  --theme-icon-dropdown-arrow: url('/icons/carbon/dropdown-arrow.svg');
+  --theme-icon-external-link: url('/icons/carbon/external-link.svg');
+  --theme-icon-filter: url('/icons/carbon/filter.svg');
+  --theme-icon-info: url('/icons/carbon/info.svg');
+  --theme-icon-mobile: url('/icons/carbon/mobile.svg');
+  --theme-icon-more: url('/icons/carbon/more.svg');
+  --theme-icon-pagination-left: url('/icons/carbon/pagination-left.svg');
+  --theme-icon-pagination-right: url('/icons/carbon/pagination-right.svg');
+  --theme-icon-print: url('/icons/carbon/print.svg');
+  --theme-icon-search: url('/icons/carbon/search.svg');
+  --theme-icon-settings: url('/icons/carbon/settings.svg');
+  --theme-icon-sort: url('/icons/carbon/sort.svg');
+  --theme-icon-tools: url('/icons/carbon/tools.svg');
+  --theme-icon-warning: url('/icons/carbon/warning.svg');
+  color: var(--dark);
+  font-family: var(--theme-font-family);
+}
+
+.app-root[data-ui-theme='cloudscape'] {
+  --dark: #0f1419;
+  --dark-strong: #000716;
+  --green: #0972d3;
+  --green-hover: #033160;
+  --light-green: #e9f3fc;
+  --surface: #f2f3f3;
+  --surface-soft: #f7f8f8;
+  --control: #b6bec9;
+  --muted: #5f6b7a;
+  --line: #b6bec9;
+  --blue: #0972d3;
+  --yellow: #8d6605;
+  --blocked: #5f6b7a;
+  --radius: 8px;
+  --theme-font-family: 'Open Sans Tangible Theme', Arial, sans-serif;
+  --theme-focus: #0972d3;
+  --theme-focus-ring: rgba(9, 114, 211, 0.24);
+  --theme-interactive: #0972d3;
+  --theme-interactive-hover: #033160;
+  --theme-layer: #ffffff;
+  --theme-layer-accent: #f2f3f3;
+  --theme-layer-hover: #e9f3fc;
+  --theme-border-strong: #7d8998;
+  --theme-success: #037f0c;
+  --theme-success-soft: #f2fcf3;
+  --theme-warning: #8d6605;
+  --theme-warning-soft: #fffce9;
+  --theme-error: #d91515;
+  --theme-error-soft: #fff7f7;
+  --theme-info: #0972d3;
+  --theme-info-soft: #e9f3fc;
+  --theme-inverse: #0f1b2a;
+  --theme-inverse-text: #ffffff;
+  --shadow-soft: 0 4px 20px rgba(15, 20, 25, 0.16);
+  --shadow-overlay: 0 16px 40px rgba(15, 20, 25, 0.22);
+  --theme-icon-ai: url('/icons/cloudscape/ai.svg');
+  --theme-icon-arrow-down: url('/icons/cloudscape/arrow-down.svg');
+  --theme-icon-arrow-left: url('/icons/cloudscape/arrow-left.svg');
+  --theme-icon-arrow-right: url('/icons/cloudscape/arrow-right.svg');
+  --theme-icon-arrow-up-right: url('/icons/cloudscape/arrow-up-right.svg');
+  --theme-icon-check: url('/icons/cloudscape/check.svg');
+  --theme-icon-chevrons: url('/icons/cloudscape/chevrons.svg');
+  --theme-icon-clock: url('/icons/cloudscape/clock.svg');
+  --theme-icon-close: url('/icons/cloudscape/close.svg');
+  --theme-icon-copy: url('/icons/cloudscape/copy.svg');
+  --theme-icon-cta-arrow: url('/icons/cloudscape/cta-arrow.svg');
+  --theme-icon-desktop: url('/icons/cloudscape/desktop.svg');
+  --theme-icon-download: url('/icons/cloudscape/download.svg');
+  --theme-icon-dropdown-arrow: url('/icons/cloudscape/dropdown-arrow.svg');
+  --theme-icon-external-link: url('/icons/cloudscape/external-link.svg');
+  --theme-icon-filter: url('/icons/cloudscape/filter.svg');
+  --theme-icon-info: url('/icons/cloudscape/info.svg');
+  --theme-icon-mobile: url('/icons/cloudscape/mobile.svg');
+  --theme-icon-more: url('/icons/cloudscape/more.svg');
+  --theme-icon-pagination-left: url('/icons/cloudscape/pagination-left.svg');
+  --theme-icon-pagination-right: url('/icons/cloudscape/pagination-right.svg');
+  --theme-icon-print: url('/icons/cloudscape/print.svg');
+  --theme-icon-search: url('/icons/cloudscape/search.svg');
+  --theme-icon-settings: url('/icons/cloudscape/settings.svg');
+  --theme-icon-sort: url('/icons/cloudscape/sort.svg');
+  --theme-icon-tools: url('/icons/cloudscape/tools.svg');
+  --theme-icon-warning: url('/icons/cloudscape/warning.svg');
+  color: var(--dark);
+  font-family: var(--theme-font-family);
+}
+
+.app-root[data-ui-theme='coinbase'] {
+  --dark: #0a0b0d;
+  --dark-strong: #050609;
+  --green: #0052ff;
+  --green-hover: #0045d8;
+  --light-green: #e7efff;
+  --surface: #ffffff;
+  --surface-soft: #f5f7fa;
+  --control: #d6dae1;
+  --muted: #5b616e;
+  --line: #d6dae1;
+  --blue: #0052ff;
+  --yellow: #8a6100;
+  --blocked: #717886;
+  --radius: 16px;
+  --theme-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --theme-focus: #0052ff;
+  --theme-focus-ring: rgba(0, 82, 255, 0.22);
+  --theme-interactive: #0052ff;
+  --theme-interactive-hover: #0045d8;
+  --theme-layer: #ffffff;
+  --theme-layer-accent: #eef0f3;
+  --theme-layer-hover: #f0f4ff;
+  --theme-border-strong: #aeb4c0;
+  --theme-success: #067647;
+  --theme-success-soft: #e6f6f0;
+  --theme-warning: #8a6100;
+  --theme-warning-soft: #fff3d6;
+  --theme-error: #cf202f;
+  --theme-error-soft: #fdebed;
+  --theme-info: #0052ff;
+  --theme-info-soft: #e7efff;
+  --theme-inverse: #0a0b0d;
+  --theme-inverse-text: #ffffff;
+  --shadow-soft: 0 8px 32px rgba(10, 11, 13, 0.12);
+  --shadow-overlay: 0 20px 56px rgba(10, 11, 13, 0.2);
+  --theme-icon-ai: url('/icons/coinbase/ai.svg');
+  --theme-icon-arrow-down: url('/icons/coinbase/arrow-down.svg');
+  --theme-icon-arrow-left: url('/icons/coinbase/arrow-left.svg');
+  --theme-icon-arrow-right: url('/icons/coinbase/arrow-right.svg');
+  --theme-icon-arrow-up-right: url('/icons/coinbase/arrow-up-right.svg');
+  --theme-icon-check: url('/icons/coinbase/check.svg');
+  --theme-icon-chevrons: url('/icons/coinbase/chevrons.svg');
+  --theme-icon-clock: url('/icons/coinbase/clock.svg');
+  --theme-icon-close: url('/icons/coinbase/close.svg');
+  --theme-icon-copy: url('/icons/coinbase/copy.svg');
+  --theme-icon-cta-arrow: url('/icons/coinbase/cta-arrow.svg');
+  --theme-icon-desktop: url('/icons/coinbase/desktop.svg');
+  --theme-icon-download: url('/icons/coinbase/download.svg');
+  --theme-icon-dropdown-arrow: url('/icons/coinbase/dropdown-arrow.svg');
+  --theme-icon-external-link: url('/icons/coinbase/external-link.svg');
+  --theme-icon-filter: url('/icons/coinbase/filter.svg');
+  --theme-icon-info: url('/icons/coinbase/info.svg');
+  --theme-icon-mobile: url('/icons/coinbase/mobile.svg');
+  --theme-icon-more: url('/icons/coinbase/more.svg');
+  --theme-icon-pagination-left: url('/icons/coinbase/pagination-left.svg');
+  --theme-icon-pagination-right: url('/icons/coinbase/pagination-right.svg');
+  --theme-icon-print: url('/icons/coinbase/print.svg');
+  --theme-icon-search: url('/icons/coinbase/search.svg');
+  --theme-icon-settings: url('/icons/coinbase/settings.svg');
+  --theme-icon-sort: url('/icons/coinbase/sort.svg');
+  --theme-icon-tools: url('/icons/coinbase/tools.svg');
+  --theme-icon-warning: url('/icons/coinbase/warning.svg');
+  color: var(--dark);
+  font-family: var(--theme-font-family);
+}
+
+/* Official system icon sets. */
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-ai {
+  --system-icon: var(--theme-icon-ai);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-arrow-down {
+  --system-icon: var(--theme-icon-arrow-down);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-arrow-left {
+  --system-icon: var(--theme-icon-arrow-left);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-arrow-right {
+  --system-icon: var(--theme-icon-arrow-right);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-arrow-up-right {
+  --system-icon: var(--theme-icon-arrow-up-right);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-check {
+  --system-icon: var(--theme-icon-check);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-chevrons {
+  --system-icon: var(--theme-icon-chevrons);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-clock {
+  --system-icon: var(--theme-icon-clock);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-close {
+  --system-icon: var(--theme-icon-close);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-copy {
+  --system-icon: var(--theme-icon-copy);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-cta-arrow {
+  --system-icon: var(--theme-icon-cta-arrow);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-desktop {
+  --system-icon: var(--theme-icon-desktop);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-download {
+  --system-icon: var(--theme-icon-download);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-dropdown-arrow {
+  --system-icon: var(--theme-icon-dropdown-arrow);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-external-link {
+  --system-icon: var(--theme-icon-external-link);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-filter {
+  --system-icon: var(--theme-icon-filter);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-info {
+  --system-icon: var(--theme-icon-info);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-mobile {
+  --system-icon: var(--theme-icon-mobile);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-more {
+  --system-icon: var(--theme-icon-more);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-pagination-left {
+  --system-icon: var(--theme-icon-pagination-left);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-pagination-right {
+  --system-icon: var(--theme-icon-pagination-right);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-print {
+  --system-icon: var(--theme-icon-print);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-search {
+  --system-icon: var(--theme-icon-search);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-settings {
+  --system-icon: var(--theme-icon-settings);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-sort {
+  --system-icon: var(--theme-icon-sort);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-tools {
+  --system-icon: var(--theme-icon-tools);
+}
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon-warning {
+  --system-icon: var(--theme-icon-warning);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) svg.icon > * {
+  visibility: hidden;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .icon {
+  background: currentColor;
+  -webkit-mask: var(--system-icon) center / contain no-repeat !important;
+  mask: var(--system-icon) center / contain no-repeat !important;
+}
+
+/* Shared non-Tangible behavior and component foundations. */
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(button, input, select, textarea, .fund-avatar) {
+  font-family: var(--theme-font-family);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(strong, b, h1, h2, h3, h4, h5, h6) {
+  font-weight: 600;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(button, input, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--theme-focus);
+  outline-offset: 2px;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .review-stage,
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .app-shell {
+  background: var(--surface);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .welcome-pointer {
+  display: none;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .welcome h1 em {
+  font-style: normal;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.icon-button, .small-icon-button) {
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: var(--theme-layer-accent);
+  box-shadow: none;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.icon-button, .small-icon-button):hover:not(:disabled) {
+  transform: none;
+  border-color: var(--theme-border-strong);
+  background: var(--theme-layer-hover);
+  box-shadow: none;
+  color: var(--dark);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.icon-button, .small-icon-button)[aria-pressed='true'] {
+  border-color: var(--theme-interactive);
+  background: var(--theme-interactive);
+  color: white;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .control-badge {
+  border-radius: var(--radius);
+  background: var(--theme-interactive);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .design-system-button {
+  border: 1px solid var(--theme-border-strong);
+  border-radius: var(--radius);
+  background: var(--theme-layer);
+  box-shadow: none;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .design-system-control.is-open {
+  border: 1px solid var(--theme-border-strong);
+  border-radius: var(--radius);
+  background: var(--theme-layer);
+  box-shadow: var(--shadow-soft);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  .design-system-control.is-open
+  .design-system-button {
+  border: 0;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .design-system-divider {
+  background: var(--line);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .design-system-menu button {
+  color: var(--dark);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .design-system-menu button:hover {
+  color: var(--theme-interactive);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.search-field, .mobile-search-field) {
+  border: 1px solid var(--theme-border-strong);
+  border-radius: var(--radius);
+  background: var(--theme-layer);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.search-field, .mobile-search-field):focus-within {
+  border-color: var(--theme-focus);
+  box-shadow: 0 0 0 2px var(--theme-focus-ring);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.popover, .control-panel, .export-menu, .row-menu) {
+  border: 1px solid var(--theme-border-strong);
+  border-radius: var(--radius);
+  background: var(--theme-layer);
+  box-shadow: var(--shadow-soft);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.export-menu, .row-menu)
+  button {
+  border-radius: var(--radius);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.export-menu, .row-menu)
+  button:hover:not(:disabled) {
+  background: var(--theme-layer-hover);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  .control-panel
+  input[type='checkbox'] {
+  accent-color: var(--theme-interactive);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.control-panel select, .page-size select) {
+  border: 1px solid var(--theme-border-strong);
+  border-radius: var(--radius);
+  background: var(--theme-layer);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .segmented {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--theme-layer-accent);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .segmented button {
+  border-radius: var(--radius);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  .segmented
+  button[aria-pressed='true'] {
+  background: var(--theme-layer);
+  box-shadow: inset 0 -2px 0 var(--theme-interactive);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.primary-button, .secondary-button, .text-button, .row-primary) {
+  border-radius: var(--radius);
+  box-shadow: none;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.primary-button, .row-primary.status-action-ready) {
+  background: var(--theme-interactive);
+  color: white;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.primary-button, .row-primary.status-action-ready):hover {
+  transform: none;
+  background: var(--theme-interactive-hover);
+  box-shadow: none;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.secondary-button, .row-primary:not(.status-action-ready)) {
+  border: 1px solid var(--theme-border-strong);
+  background: var(--theme-layer);
+  color: var(--dark);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.secondary-button, .row-primary:not(.status-action-ready)):hover {
+  transform: none;
+  border-color: var(--theme-interactive);
+  background: var(--theme-layer-hover);
+  box-shadow: none;
+  color: var(--dark);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .text-button {
+  background: transparent;
+  color: var(--theme-interactive);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .new-ribbon-clip {
+  z-index: 4;
+  inset: 6px 6px auto auto;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  border-radius: 0;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .new-ribbon,
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .position-card .new-ribbon {
+  position: static;
+  width: auto;
+  height: 18px;
+  padding: 0 6px;
+  transform: none;
+  border-radius: var(--radius);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  line-height: 18px;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .new-ribbon-label {
+  transform: none;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .status-badge {
+  border-radius: var(--radius);
+  letter-spacing: 0.3px;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .status-badge > .icon {
+  animation: none;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .status-badge.status-ready,
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .status-ready .status-badge {
+  background: var(--theme-success-soft);
+  color: var(--theme-success);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .status-badge.status-in-progress,
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .status-in-progress .status-badge {
+  background: var(--theme-info-soft);
+  color: var(--theme-info);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .status-badge.status-review,
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .status-review .status-badge {
+  background: var(--theme-warning-soft);
+  color: var(--theme-warning);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .status-badge.status-blocked,
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .status-blocked .status-badge {
+  background: var(--theme-error-soft);
+  color: var(--theme-error);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .status-badge.status-monitoring,
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .status-monitoring .status-badge {
+  background: var(--theme-layer-accent);
+  color: var(--dark);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .progress-track {
+  border-radius: var(--radius);
+  background: var(--control);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .progress-track::before,
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .progress-track::after {
+  display: none;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .progress-track > span {
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: var(--radius);
+  background: var(--theme-interactive);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .overlay-scrim {
+  background: rgba(22, 22, 22, 0.48);
+  backdrop-filter: none;
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.details-drawer, .ai-chat, .handoff-modal, .diagnostics-modal) {
+  border: 1px solid var(--theme-border-strong);
+  border-radius: var(--radius);
+  background: var(--theme-layer);
+  box-shadow: var(--shadow-overlay);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.drawer-identity, .ai-context, .readiness-card, .handoff-summary) {
+  border-radius: var(--radius);
+  background: var(--theme-layer-accent);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .eyebrow {
+  color: var(--theme-interactive);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.drawer-note, .ai-disclaimer, .modal-note) {
+  border-radius: var(--radius);
+  background: var(--theme-info-soft);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .chat-message {
+  border-radius: var(--radius);
+  background: var(--theme-layer-accent);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .chat-message.user,
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .send-button {
+  border-radius: var(--radius);
+  background: var(--theme-interactive);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))
+  :is(.ai-suggestions button, .chat-form input) {
+  border-color: var(--theme-border-strong);
+  border-radius: var(--radius);
+}
+
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .toast {
+  border-radius: var(--radius);
+  background: var(--theme-inverse);
+}
+
+/* Visa Nova: open, service-oriented hierarchy and banded data table. */
+.app-root[data-ui-theme='nova'] .app-shell {
+  padding-top: 60px;
+  border-top: 4px solid #f7b600;
+}
+
+.app-root[data-ui-theme='nova'] .topbar {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #d7d7d7;
+}
+
+.app-root[data-ui-theme='nova'] .design-system-button {
+  border-color: #1e78a8;
+  color: #155d7d;
+}
+
+.app-root[data-ui-theme='nova'] .welcome {
+  margin-top: 64px;
+  padding: 0 0 40px 28px;
+  border-bottom: 0;
+  border-left: 4px solid #1e78a8;
+}
+
+.app-root[data-ui-theme='nova'] .welcome h1 {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.app-root[data-ui-theme='nova'] .welcome h1 em {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #252525;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: -1.2px;
+  text-transform: none;
+}
+
+.app-root[data-ui-theme='nova'] .workspace-head {
+  margin-top: 48px;
+}
+
+.app-root[data-ui-theme='nova'] .workspace-title-row h2 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.app-root[data-ui-theme='nova'] .freshness {
+  color: #5c5c5c;
+}
+
+.app-root[data-ui-theme='nova'] .tabs {
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.app-root[data-ui-theme='nova'] .tab {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid #b8b8b8;
+  border-radius: 2px;
+  background: #ffffff;
+  color: #252525;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.app-root[data-ui-theme='nova'] .tab small {
+  font-size: 13px;
+}
+
+.app-root[data-ui-theme='nova'] .tab::after {
+  display: none;
+}
+
+.app-root[data-ui-theme='nova'] .tab:hover {
+  border-color: #1e78a8;
+  background: #f5fbfe;
+  color: #155d7d;
+}
+
+.app-root[data-ui-theme='nova'] .tab.active {
+  border-color: #1e78a8;
+  background: #e5f3fa;
+  color: #155d7d;
+  font-weight: 600;
+  box-shadow: inset 0 -3px 0 #1e78a8;
+}
+
+.app-root[data-ui-theme='nova'] .view-toolbar {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid #d7d7d7;
+  background: #f7f7f7;
+}
+
+.app-root[data-ui-theme='nova'] .operational-views {
+  gap: 8px;
+}
+
+.app-root[data-ui-theme='nova'] .view-filter {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid #b8b8b8;
+  border-radius: 2px;
+  background: #ffffff;
+  color: #454545;
+}
+
+.app-root[data-ui-theme='nova'] .view-filter .radio-dot {
+  display: none;
+}
+
+.app-root[data-ui-theme='nova'] .view-filter:hover {
+  border-color: #1e78a8;
+  color: #155d7d;
+}
+
+.app-root[data-ui-theme='nova'] .view-filter.active {
+  border-color: #1e78a8;
+  background: #155d7d;
+  color: #ffffff;
+}
+
+.app-root[data-ui-theme='nova'] .toolbar-divider {
+  background: #b8b8b8;
+}
+
+.app-root[data-ui-theme='nova'] .table-region {
+  margin-top: 16px;
+  padding: 0;
+  border: 1px solid #b8b8b8;
+  border-radius: 2px;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.app-root[data-ui-theme='nova'] .table-flow {
+  border-radius: 2px;
+}
+
+.app-root[data-ui-theme='nova'] table {
+  border-spacing: 0;
+  border-collapse: separate;
+  font-size: 12px;
+}
+
+.app-root[data-ui-theme='nova'] th {
+  height: 48px;
+  padding: 0 16px;
+  border-bottom: 1px solid #777777;
+  background: #f2f2f2;
+  color: #252525;
+  font-size: 12px;
+  text-transform: none;
+}
+
+.app-root[data-ui-theme='nova'] th.numeric,
+.app-root[data-ui-theme='nova'] td.numeric {
+  text-align: right;
+}
+
+.app-root[data-ui-theme='nova'] th.numeric button {
+  justify-content: flex-end;
+}
+
+.app-root[data-ui-theme='nova'] th.numeric .sort-label {
+  text-align: right;
+}
+
+.app-root[data-ui-theme='nova'] td {
+  height: 88px;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: inset 0 -1px 0 #d7d7d7;
+}
+
+.app-root[data-ui-theme='nova'] tbody tr:nth-child(even) td {
+  background: #f7f7f7;
+}
+
+.app-root[data-ui-theme='nova'] tbody tr:hover td,
+.app-root[data-ui-theme='nova'] tbody tr:focus-within td {
+  background: #e5f3fa;
+  box-shadow: inset 0 -1px 0 #1e78a8;
+}
+
+.app-root[data-ui-theme='nova'] tbody tr.source-selected td {
+  background: #e5f3fa;
+  box-shadow:
+    inset 0 2px 0 #1e78a8,
+    inset 0 -2px 0 #1e78a8;
+}
+
+.app-root[data-ui-theme='nova'] tbody tr.source-selected td:first-child {
+  box-shadow:
+    inset 2px 0 0 #1e78a8,
+    inset 0 2px 0 #1e78a8,
+    inset 0 -2px 0 #1e78a8;
+}
+
+.app-root[data-ui-theme='nova'] tbody tr.source-selected td:last-child {
+  box-shadow:
+    inset -2px 0 0 #1e78a8,
+    inset 0 2px 0 #1e78a8,
+    inset 0 -2px 0 #1e78a8;
+}
+
+.app-root[data-ui-theme='nova'] .fund-avatar {
+  width: 36px;
+  height: 36px;
+  flex-basis: 36px;
+  border-radius: 2px;
+}
+
+.app-root[data-ui-theme='nova'] .identity {
+  gap: 10px;
+}
+
+.app-root[data-ui-theme='nova'] .identity strong,
+.app-root[data-ui-theme='nova'] .two-line strong {
+  font-weight: 600;
+}
+
+.app-root[data-ui-theme='nova'] .financial-value,
+.app-root[data-ui-theme='nova'] .range-cell strong,
+.app-root[data-ui-theme='nova'] .market-value-link,
+.app-root[data-ui-theme='nova'] .stage-cell strong {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.app-root[data-ui-theme='nova'] .range-cell {
+  align-items: flex-end;
+}
+
+.app-root[data-ui-theme='nova'] .range-cell small {
+  text-align: right;
+}
+
+.app-root[data-ui-theme='nova'] .new-ribbon {
+  border: 1px solid #1e78a8;
+  background: #ffffff;
+  color: #155d7d;
+}
+
+.app-root[data-ui-theme='nova'] .status-badge {
+  min-height: 26px;
+  padding: 4px 8px;
+  border: 1px solid currentColor;
+  font-size: 10px;
+}
+
+.app-root[data-ui-theme='nova'] .progress-track {
+  height: 4px;
+}
+
+.app-root[data-ui-theme='nova'] .row-primary {
+  min-height: 36px;
+  padding: 0 12px;
+  border-width: 1px;
+  font-size: 13px;
+}
+
+.app-root[data-ui-theme='nova'] .small-icon-button {
+  width: 28px;
+  height: 28px;
+}
+
+.app-root[data-ui-theme='nova'] .pagination {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #d7d7d7;
+}
+
+.app-root[data-ui-theme='nova'] .page-buttons button {
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+
+.app-root[data-ui-theme='nova'] .page-buttons button:hover,
+.app-root[data-ui-theme='nova'] .page-buttons button[aria-current='page'] {
+  border-color: #1e78a8;
+  background: #e5f3fa;
+  color: #155d7d;
+  box-shadow: none;
+}
+
+.app-root[data-ui-theme='nova'] :is(.details-drawer, .ai-chat, .handoff-modal, .diagnostics-modal) {
+  border-top: 4px solid #1e78a8;
+}
+
+/* IBM Carbon v11: high-density shell, contained tabs and connected table stack. */
+.app-root[data-ui-theme='carbon'] .app-shell {
+  padding-top: 0;
+  background: #f4f4f4;
+}
+
+.app-root[data-ui-theme='carbon'] .topbar {
+  min-height: 64px;
+  margin: 0 -64px;
+  padding: 0 64px;
+  background: #161616;
+  color: #f4f4f4;
+}
+
+.app-root[data-ui-theme='carbon'] .brand-mark img {
+  filter: grayscale(1) brightness(0) invert(1);
+}
+
+.app-root[data-ui-theme='carbon'] .topbar :is(.icon-button, .small-icon-button) {
+  border-color: #525252;
+  background: #262626;
+  color: #f4f4f4;
+}
+
+.app-root[data-ui-theme='carbon'] .topbar :is(.icon-button, .small-icon-button):hover {
+  border-color: #8d8d8d;
+  background: #353535;
+  color: #ffffff;
+}
+
+.app-root[data-ui-theme='carbon'] .design-system-button {
+  border-color: #525252;
+  background: #262626;
+  color: #f4f4f4;
+}
+
+.app-root[data-ui-theme='carbon'] .design-system-button:hover {
+  border-color: #8d8d8d;
+  background: #353535;
+}
+
+.app-root[data-ui-theme='carbon'] .design-system-control.is-open {
+  border-color: #525252;
+  background: #ffffff;
+  color: #161616;
+}
+
+.app-root[data-ui-theme='carbon'] .design-system-control.is-open .design-system-button {
+  background: #ffffff;
+  color: #161616;
+}
+
+.app-root[data-ui-theme='carbon'] .welcome {
+  margin: 0 -64px;
+  padding: 48px 64px 40px;
+  border-bottom: 1px solid #c6c6c6;
+  background: #ffffff;
+}
+
+.app-root[data-ui-theme='carbon'] .welcome h1 {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 4px;
+  color: #525252;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.16px;
+  text-transform: uppercase;
+}
+
+.app-root[data-ui-theme='carbon'] .welcome h1 em {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #161616;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 56px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.app-root[data-ui-theme='carbon'] .workspace-head {
+  margin-top: 48px;
+}
+
+.app-root[data-ui-theme='carbon'] .workspace-title-row h2 {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.app-root[data-ui-theme='carbon'] .freshness {
+  color: #525252;
+  font-weight: 400;
+}
+
+.app-root[data-ui-theme='carbon'] .tabs {
+  gap: 0;
+  margin-top: 24px;
+}
+
+.app-root[data-ui-theme='carbon'] .tab {
+  min-width: 176px;
+  height: 40px;
+  padding: 0 16px;
+  border-top: 2px solid transparent;
+  border-right: 1px solid #8d8d8d;
+  background: #e0e0e0;
+  color: #525252;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: left;
+}
+
+.app-root[data-ui-theme='carbon'] .tab small {
+  font-size: 12px;
+}
+
+.app-root[data-ui-theme='carbon'] .tab::after {
+  display: none;
+}
+
+.app-root[data-ui-theme='carbon'] .tab:hover {
+  background: #d1d1d1;
+  color: #161616;
+}
+
+.app-root[data-ui-theme='carbon'] .tab.active {
+  border-top-color: #0f62fe;
+  background: #ffffff;
+  color: #161616;
+  font-weight: 600;
+}
+
+.app-root[data-ui-theme='carbon'] .view-toolbar {
+  margin-top: 0;
+  padding: 16px;
+  border-top: 1px solid #8d8d8d;
+  background: #e0e0e0;
+}
+
+.app-root[data-ui-theme='carbon'] .operational-views {
+  gap: 0;
+}
+
+.app-root[data-ui-theme='carbon'] .view-filter {
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid #8d8d8d;
+  border-right: 0;
+  background: #f4f4f4;
+  color: #161616;
+}
+
+.app-root[data-ui-theme='carbon'] .view-filter:last-child {
+  border-right: 1px solid #8d8d8d;
+}
+
+.app-root[data-ui-theme='carbon'] .view-filter .radio-dot {
+  display: none;
+}
+
+.app-root[data-ui-theme='carbon'] .view-filter:hover {
+  background: #d1d1d1;
+}
+
+.app-root[data-ui-theme='carbon'] .view-filter.active {
+  border-color: #161616;
+  background: #161616;
+  color: #ffffff;
+  box-shadow: 1px 0 0 #161616;
+}
+
+.app-root[data-ui-theme='carbon'] .toolbar-divider {
+  background: #8d8d8d;
+}
+
+.app-root[data-ui-theme='carbon'] :is(.search-field, .mobile-search-field) {
+  border: 0;
+  border-bottom: 1px solid #8d8d8d;
+  background: #ffffff;
+}
+
+.app-root[data-ui-theme='carbon'] .table-region {
+  margin-top: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.app-root[data-ui-theme='carbon'] .table-flow {
+  border-radius: 0;
+}
+
+.app-root[data-ui-theme='carbon'] table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  background: #ffffff;
+  font-size: 12px;
+}
+
+.app-root[data-ui-theme='carbon'] th {
+  height: 48px;
+  padding: 0 16px;
+  border-bottom: 1px solid #8d8d8d;
+  background: #e0e0e0;
+  color: #161616;
+  font-size: 12px;
+  letter-spacing: 0.32px;
+}
+
+.app-root[data-ui-theme='carbon'] th button {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.app-root[data-ui-theme='carbon'] td {
+  height: 72px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: inset 0 -1px 0 #e0e0e0;
+}
+
+.app-root[data-ui-theme='carbon'] tbody tr:hover td,
+.app-root[data-ui-theme='carbon'] tbody tr:focus-within td {
+  background: #e8e8e8;
+  box-shadow: inset 0 -1px 0 #8d8d8d;
+}
+
+.app-root[data-ui-theme='carbon'] tbody tr.source-selected td {
+  background: #edf5ff;
+  box-shadow: inset 0 -1px 0 #0f62fe;
+}
+
+.app-root[data-ui-theme='carbon'] tbody tr.source-selected td:first-child {
+  box-shadow:
+    inset 4px 0 0 #0f62fe,
+    inset 0 -1px 0 #0f62fe;
+}
+
+.app-root[data-ui-theme='carbon'] .fund-avatar {
+  width: 32px;
+  height: 32px;
+  flex-basis: 32px;
+  border-radius: 0;
+}
+
+.app-root[data-ui-theme='carbon'] .identity {
+  gap: 12px;
+}
+
+.app-root[data-ui-theme='carbon'] .identity strong,
+.app-root[data-ui-theme='carbon'] .two-line strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.app-root[data-ui-theme='carbon'] .financial-value,
+.app-root[data-ui-theme='carbon'] .range-cell strong,
+.app-root[data-ui-theme='carbon'] .market-value-link,
+.app-root[data-ui-theme='carbon'] .stage-cell strong {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.app-root[data-ui-theme='carbon'] .new-ribbon-clip {
+  inset: 0 0 auto auto;
+}
+
+.app-root[data-ui-theme='carbon'] .new-ribbon {
+  height: 20px;
+  padding: 0 8px;
+  background: #0f62fe;
+  color: #ffffff;
+  line-height: 20px;
+}
+
+.app-root[data-ui-theme='carbon'] .status-badge {
+  min-height: 24px;
+  padding: 4px 8px 4px 10px;
+  border-left: 3px solid currentColor;
+  font-size: 10px;
+}
+
+.app-root[data-ui-theme='carbon'] .stage-cell {
+  height: 48px;
+}
+
+.app-root[data-ui-theme='carbon'] .stage-cell .stage-label {
+  top: 22px;
+}
+
+.app-root[data-ui-theme='carbon'] .progress-track {
+  top: 44px;
+  height: 4px;
+}
+
+.app-root[data-ui-theme='carbon'] .row-primary {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 0;
+  font-size: 12px;
+}
+
+.app-root[data-ui-theme='carbon'] .row-primary:not(.status-action-ready) {
+  border-bottom: 1px solid #8d8d8d;
+  background: #f4f4f4;
+}
+
+.app-root[data-ui-theme='carbon'] .small-icon-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 0;
+}
+
+.app-root[data-ui-theme='carbon'] .pagination {
+  min-height: 48px;
+  margin-top: 0;
+  padding: 0 0 0 16px;
+  border-top: 1px solid #8d8d8d;
+  background: #ffffff;
+}
+
+.app-root[data-ui-theme='carbon'] .pagination > .page-size {
+  min-height: 48px;
+  padding-left: 16px;
+  border-left: 1px solid #c6c6c6;
+}
+
+.app-root[data-ui-theme='carbon'] .pagination .icon-button,
+.app-root[data-ui-theme='carbon'] .page-buttons button {
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+}
+
+.app-root[data-ui-theme='carbon'] .page-buttons {
+  gap: 0;
+}
+
+.app-root[data-ui-theme='carbon'] .page-buttons button:hover,
+.app-root[data-ui-theme='carbon'] .page-buttons button[aria-current='page'] {
+  background: #e0e0e0;
+  color: #161616;
+  box-shadow: inset 0 -3px 0 #0f62fe;
+}
+
+.app-root[data-ui-theme='carbon']
+  :is(.details-drawer, .ai-chat, .handoff-modal, .diagnostics-modal)
+  .overlay-header {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #c6c6c6;
+}
+
+/* Cloudscape: calm operations shell and a single bordered resource collection. */
+.app-root[data-ui-theme='cloudscape'] .app-shell {
+  padding-top: 0;
+  background: #f2f3f3;
+}
+
+.app-root[data-ui-theme='cloudscape'] .topbar {
+  min-height: 64px;
+  margin: 0 -64px;
+  padding: 0 64px;
+  background: #0f1b2a;
+  color: #ffffff;
+}
+
+.app-root[data-ui-theme='cloudscape'] .brand-mark img {
+  filter: grayscale(1) brightness(0) invert(1);
+}
+
+.app-root[data-ui-theme='cloudscape'] .topbar :is(.icon-button, .small-icon-button) {
+  border-color: #5f6b7a;
+  background: #192534;
+  color: #ffffff;
+}
+
+.app-root[data-ui-theme='cloudscape'] .topbar :is(.icon-button, .small-icon-button):hover {
+  border-color: #ffffff;
+  background: #253447;
+  color: #ffffff;
+}
+
+.app-root[data-ui-theme='cloudscape'] .design-system-button {
+  border-color: #7d8998;
+  background: #192534;
+  color: #ffffff;
+}
+
+.app-root[data-ui-theme='cloudscape'] .design-system-button:hover {
+  border-color: #ffffff;
+  background: #253447;
+}
+
+.app-root[data-ui-theme='cloudscape'] .design-system-control.is-open {
+  border-color: #7d8998;
+  background: #ffffff;
+  color: #0f1419;
+}
+
+.app-root[data-ui-theme='cloudscape'] .design-system-control.is-open .design-system-button {
+  background: #ffffff;
+  color: #0f1419;
+}
+
+.app-root[data-ui-theme='cloudscape'] .welcome {
+  margin-top: 40px;
+  padding: 0 0 32px;
+  border-bottom: 0;
+}
+
+.app-root[data-ui-theme='cloudscape'] .welcome h1 {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 4px;
+  color: #5f6b7a;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.app-root[data-ui-theme='cloudscape'] .welcome h1 em {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #0f1419;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 44px;
+  letter-spacing: -0.4px;
+}
+
+.app-root[data-ui-theme='cloudscape'] .workspace-head {
+  margin-top: 0;
+  padding: 24px 24px 16px;
+  border: 1px solid #b6bec9;
+  border-bottom: 0;
+  border-radius: 12px 12px 0 0;
+  background: #ffffff;
+}
+
+.app-root[data-ui-theme='cloudscape'] .workspace-title-row h2 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.app-root[data-ui-theme='cloudscape'] .freshness {
+  color: #5f6b7a;
+  font-weight: 400;
+}
+
+.app-root[data-ui-theme='cloudscape'] .tabs {
+  gap: 24px;
+  margin-top: 20px;
+  border-bottom: 1px solid #b6bec9;
+}
+
+.app-root[data-ui-theme='cloudscape'] .tab {
+  min-height: 40px;
+  padding: 0 4px 10px;
+  color: #414d5c;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.app-root[data-ui-theme='cloudscape'] .tab small {
+  font-size: 12px;
+}
+
+.app-root[data-ui-theme='cloudscape'] .tab::after {
+  height: 3px;
+  border-radius: 0;
+  background: transparent;
+}
+
+.app-root[data-ui-theme='cloudscape'] .tab:hover {
+  color: #033160;
+}
+
+.app-root[data-ui-theme='cloudscape'] .tab.active {
+  color: #0f1419;
+  font-weight: 600;
+}
+
+.app-root[data-ui-theme='cloudscape'] .tab.active::after,
+.app-root[data-ui-theme='cloudscape'] .tab:hover::after {
+  background: #0972d3;
+}
+
+.app-root[data-ui-theme='cloudscape'] .view-toolbar {
+  margin-top: 16px;
+  padding: 12px 0 0;
+  align-items: flex-end;
+  border-top: 1px solid #e9ebed;
+  background: #ffffff;
+}
+
+.app-root[data-ui-theme='cloudscape'] .operational-views {
+  gap: 8px;
+}
+
+.app-root[data-ui-theme='cloudscape'] .view-filter {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid #7d8998;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #414d5c;
+  font-size: 12px;
+}
+
+.app-root[data-ui-theme='cloudscape'] .view-filter .radio-dot {
+  display: none;
+}
+
+.app-root[data-ui-theme='cloudscape'] .view-filter:hover {
+  border-color: #0972d3;
+  background: #f7fbff;
+  color: #033160;
+}
+
+.app-root[data-ui-theme='cloudscape'] .view-filter.active {
+  border-color: #0972d3;
+  background: #e9f3fc;
+  color: #033160;
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px #0972d3;
+}
+
+.app-root[data-ui-theme='cloudscape'] :is(.search-field, .mobile-search-field) {
+  border-color: #7d8998;
+  border-radius: 8px;
+}
+
+.app-root[data-ui-theme='cloudscape'] .toolbar-divider {
+  background: #b6bec9;
+}
+
+.app-root[data-ui-theme='cloudscape'] .table-region {
+  margin-top: 0;
+  padding: 0;
+  border: 1px solid #b6bec9;
+  border-radius: 0 0 12px 12px;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(15, 20, 25, 0.08);
+}
+
+.app-root[data-ui-theme='cloudscape'] .table-flow {
+  border-radius: 0;
+}
+
+.app-root[data-ui-theme='cloudscape'] table {
+  border-spacing: 0;
+  border-collapse: separate;
+  background: #ffffff;
+  font-size: 12px;
+}
+
+.app-root[data-ui-theme='cloudscape'] th {
+  height: 44px;
+  padding: 0 16px;
+  border-bottom: 1px solid #7d8998;
+  background: #f2f3f3;
+  color: #414d5c;
+  font-size: 12px;
+}
+
+.app-root[data-ui-theme='cloudscape'] th button {
+  gap: 6px;
+}
+
+.app-root[data-ui-theme='cloudscape'] th.numeric,
+.app-root[data-ui-theme='cloudscape'] td.numeric {
+  text-align: right;
+}
+
+.app-root[data-ui-theme='cloudscape'] th.numeric button {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.app-root[data-ui-theme='cloudscape'] th.numeric .sort-label {
+  text-align: right;
+}
+
+.app-root[data-ui-theme='cloudscape'] td {
+  height: 76px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: inset 0 -1px 0 #e9ebed;
+}
+
+.app-root[data-ui-theme='cloudscape'] tbody tr:hover td,
+.app-root[data-ui-theme='cloudscape'] tbody tr:focus-within td {
+  background: #f7fbff;
+  box-shadow: inset 0 -1px 0 #0972d3;
+}
+
+.app-root[data-ui-theme='cloudscape'] tbody tr.source-selected td {
+  background: #e9f3fc;
+  box-shadow:
+    inset 0 1px 0 #0972d3,
+    inset 0 -1px 0 #0972d3;
+}
+
+.app-root[data-ui-theme='cloudscape'] tbody tr.source-selected td:first-child {
+  box-shadow:
+    inset 3px 0 0 #0972d3,
+    inset 0 1px 0 #0972d3,
+    inset 0 -1px 0 #0972d3;
+}
+
+.app-root[data-ui-theme='cloudscape'] .fund-avatar {
+  width: 36px;
+  height: 36px;
+  flex-basis: 36px;
+  border-radius: 6px;
+}
+
+.app-root[data-ui-theme='cloudscape'] .identity {
+  gap: 12px;
+}
+
+.app-root[data-ui-theme='cloudscape'] .financial-value,
+.app-root[data-ui-theme='cloudscape'] .range-cell strong,
+.app-root[data-ui-theme='cloudscape'] .market-value-link,
+.app-root[data-ui-theme='cloudscape'] .stage-cell strong {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.app-root[data-ui-theme='cloudscape'] .range-cell {
+  align-items: flex-end;
+}
+
+.app-root[data-ui-theme='cloudscape'] .range-cell small {
+  text-align: right;
+}
+
+.app-root[data-ui-theme='cloudscape'] .new-ribbon {
+  border: 1px solid #0972d3;
+  background: #e9f3fc;
+  color: #033160;
+}
+
+.app-root[data-ui-theme='cloudscape'] .status-badge {
+  min-height: 20px;
+  padding: 0;
+  background: transparent !important;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.app-root[data-ui-theme='cloudscape'] .progress-track {
+  height: 4px;
+}
+
+.app-root[data-ui-theme='cloudscape'] .row-primary {
+  min-height: 32px;
+  padding: 0 12px;
+  border-width: 1px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.app-root[data-ui-theme='cloudscape'] .small-icon-button {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.app-root[data-ui-theme='cloudscape'] .pagination {
+  min-height: 56px;
+  margin-top: 0;
+  padding: 8px 16px;
+  border-top: 1px solid #b6bec9;
+  background: #ffffff;
+}
+
+.app-root[data-ui-theme='cloudscape'] .page-buttons button {
+  border-radius: 8px;
+}
+
+.app-root[data-ui-theme='cloudscape'] .page-buttons button:hover,
+.app-root[data-ui-theme='cloudscape'] .page-buttons button[aria-current='page'] {
+  background: #e9f3fc;
+  color: #033160;
+  box-shadow: inset 0 0 0 1px #0972d3;
+}
+
+.app-root[data-ui-theme='cloudscape']
+  :is(.details-drawer, .ai-chat, .handoff-modal, .diagnostics-modal) {
+  border-radius: 12px;
+}
+
+/* Coinbase CDS: brand-scale market workspace with segmented navigation and ruled data. */
+.app-root[data-ui-theme='coinbase'] .app-shell {
+  padding-top: 32px;
+  background: #ffffff;
+}
+
+.app-root[data-ui-theme='coinbase'] .topbar {
+  padding-bottom: 24px;
+  border-bottom: 1px solid #d6dae1;
+}
+
+.app-root[data-ui-theme='coinbase'] .topbar :is(.icon-button, .small-icon-button) {
+  border-color: #d6dae1;
+  background: #ffffff;
+}
+
+.app-root[data-ui-theme='coinbase'] .topbar :is(.icon-button, .small-icon-button):hover {
+  border-color: #0052ff;
+  background: #e7efff;
+  color: #0052ff;
+}
+
+.app-root[data-ui-theme='coinbase'] .design-system-button {
+  border-color: #0052ff;
+  border-radius: 999px;
+  background: #0052ff;
+  color: #ffffff;
+}
+
+.app-root[data-ui-theme='coinbase'] .design-system-button:hover {
+  border-color: #0045d8;
+  background: #0045d8;
+}
+
+.app-root[data-ui-theme='coinbase'] .design-system-control.is-open {
+  border-color: #d6dae1;
+  border-radius: 20px;
+  background: #ffffff;
+  color: #0a0b0d;
+}
+
+.app-root[data-ui-theme='coinbase'] .design-system-control.is-open .design-system-button {
+  background: #ffffff;
+  color: #0a0b0d;
+}
+
+.app-root[data-ui-theme='coinbase'] .welcome {
+  margin: 32px -64px 0;
+  padding: 56px 64px 64px;
+  border-bottom: 0;
+  background: #0052ff;
+}
+
+.app-root[data-ui-theme='coinbase'] .welcome h1 {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 4px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.app-root[data-ui-theme='coinbase'] .welcome h1 em {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 64px;
+  letter-spacing: -1.5px;
+}
+
+.app-root[data-ui-theme='coinbase'] .workspace-head {
+  margin-top: 56px;
+}
+
+.app-root[data-ui-theme='coinbase'] .workspace-title-row h2 {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 44px;
+}
+
+.app-root[data-ui-theme='coinbase'] .freshness {
+  color: #5b616e;
+  font-weight: 400;
+}
+
+.app-root[data-ui-theme='coinbase'] .tabs {
+  width: fit-content;
+  gap: 4px;
+  margin-top: 24px;
+  padding: 4px;
+  border-radius: 999px;
+  background: #eef0f3;
+}
+
+.app-root[data-ui-theme='coinbase'] .tab {
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 999px;
+  color: #5b616e;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.app-root[data-ui-theme='coinbase'] .tab small {
+  font-size: 13px;
+}
+
+.app-root[data-ui-theme='coinbase'] .tab::after {
+  display: none;
+}
+
+.app-root[data-ui-theme='coinbase'] .tab:hover {
+  background: rgba(255, 255, 255, 0.64);
+  color: #0a0b0d;
+}
+
+.app-root[data-ui-theme='coinbase'] .tab.active {
+  background: #ffffff;
+  color: #0a0b0d;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(10, 11, 13, 0.12);
+}
+
+.app-root[data-ui-theme='coinbase'] .view-toolbar {
+  margin-top: 24px;
+  padding: 0;
+  background: #ffffff;
+}
+
+.app-root[data-ui-theme='coinbase'] .operational-views {
+  gap: 8px;
+}
+
+.app-root[data-ui-theme='coinbase'] .view-filter {
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid #d6dae1;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #5b616e;
+}
+
+.app-root[data-ui-theme='coinbase'] .view-filter .radio-dot {
+  display: none;
+}
+
+.app-root[data-ui-theme='coinbase'] .view-filter:hover {
+  border-color: #0052ff;
+  background: #f0f4ff;
+  color: #0052ff;
+}
+
+.app-root[data-ui-theme='coinbase'] .view-filter.active {
+  border-color: #0a0b0d;
+  background: #0a0b0d;
+  color: #ffffff;
+}
+
+.app-root[data-ui-theme='coinbase'] :is(.search-field, .mobile-search-field) {
+  min-height: 44px;
+  border-color: #d6dae1;
+  border-radius: 999px;
+  background: #f5f7fa;
+}
+
+.app-root[data-ui-theme='coinbase'] .toolbar-divider {
+  background: #d6dae1;
+}
+
+.app-root[data-ui-theme='coinbase'] .table-region {
+  margin-top: 24px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #d6dae1;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.app-root[data-ui-theme='coinbase'] .table-flow {
+  border-radius: 0;
+}
+
+.app-root[data-ui-theme='coinbase'] table {
+  border-spacing: 0;
+  border-collapse: separate;
+  background: #ffffff;
+  font-size: 12px;
+}
+
+.app-root[data-ui-theme='coinbase'] th {
+  height: 52px;
+  padding: 0 16px;
+  border-bottom: 1px solid #aeb4c0;
+  background: #f5f7fa;
+  color: #5b616e;
+  font-size: 11px;
+  letter-spacing: 0.35px;
+  text-transform: uppercase;
+}
+
+.app-root[data-ui-theme='coinbase'] th.numeric,
+.app-root[data-ui-theme='coinbase'] td.numeric {
+  text-align: right;
+}
+
+.app-root[data-ui-theme='coinbase'] th.numeric button {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.app-root[data-ui-theme='coinbase'] th.numeric .sort-label {
+  text-align: right;
+}
+
+.app-root[data-ui-theme='coinbase'] td {
+  height: 88px;
+  padding: 14px 16px;
+  border: 0;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: inset 0 -1px 0 #d6dae1;
+}
+
+.app-root[data-ui-theme='coinbase'] tbody tr:last-child td {
+  box-shadow: none;
+}
+
+.app-root[data-ui-theme='coinbase'] tbody tr:hover td,
+.app-root[data-ui-theme='coinbase'] tbody tr:focus-within td {
+  background: #f5f7fa;
+}
+
+.app-root[data-ui-theme='coinbase'] tbody tr.source-selected td {
+  background: #f0f4ff;
+  box-shadow:
+    inset 0 1px 0 #0052ff,
+    inset 0 -1px 0 #0052ff;
+}
+
+.app-root[data-ui-theme='coinbase'] tbody tr.source-selected td:first-child {
+  box-shadow:
+    inset 4px 0 0 #0052ff,
+    inset 0 1px 0 #0052ff,
+    inset 0 -1px 0 #0052ff;
+}
+
+.app-root[data-ui-theme='coinbase'] .fund-avatar {
+  width: 40px;
+  height: 40px;
+  flex-basis: 40px;
+  border-radius: 50%;
+}
+
+.app-root[data-ui-theme='coinbase'] .identity {
+  gap: 12px;
+}
+
+.app-root[data-ui-theme='coinbase'] .identity strong,
+.app-root[data-ui-theme='coinbase'] .two-line strong {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.app-root[data-ui-theme='coinbase'] .financial-value,
+.app-root[data-ui-theme='coinbase'] .range-cell strong,
+.app-root[data-ui-theme='coinbase'] .market-value-link,
+.app-root[data-ui-theme='coinbase'] .stage-cell strong {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.app-root[data-ui-theme='coinbase'] .range-cell {
+  align-items: flex-end;
+}
+
+.app-root[data-ui-theme='coinbase'] .range-cell small {
+  text-align: right;
+}
+
+.app-root[data-ui-theme='coinbase'] .new-ribbon {
+  border-radius: 999px;
+  background: #0052ff;
+  color: #ffffff;
+}
+
+.app-root[data-ui-theme='coinbase'] .status-badge {
+  min-height: 28px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+}
+
+.app-root[data-ui-theme='coinbase'] .progress-track {
+  height: 5px;
+  border-radius: 999px;
+}
+
+.app-root[data-ui-theme='coinbase'] .progress-track > span {
+  border-radius: 999px;
+}
+
+.app-root[data-ui-theme='coinbase'] .row-primary {
+  min-height: 36px;
+  padding: 0 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.app-root[data-ui-theme='coinbase'] .small-icon-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f5f7fa;
+}
+
+.app-root[data-ui-theme='coinbase'] .pagination {
+  min-height: 64px;
+  margin-top: 0;
+  padding: 10px 16px;
+  border-top: 1px solid #d6dae1;
+  background: #ffffff;
+}
+
+.app-root[data-ui-theme='coinbase'] .pagination .icon-button,
+.app-root[data-ui-theme='coinbase'] .page-buttons button {
+  border-radius: 999px;
+}
+
+.app-root[data-ui-theme='coinbase'] .page-buttons button:hover,
+.app-root[data-ui-theme='coinbase'] .page-buttons button[aria-current='page'] {
+  background: #0a0b0d;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.app-root[data-ui-theme='coinbase']
+  :is(.details-drawer, .ai-chat, .handoff-modal, .diagnostics-modal) {
+  border-radius: 24px;
+}
+
+/* Range values scan as one left-aligned stack while NAV remains right-aligned. */
+:is(
+    .app-root[data-ui-theme='nova'],
+    .app-root[data-ui-theme='cloudscape'],
+    .app-root[data-ui-theme='coinbase']
+  )
+  :is(th.column-range, td.column-range) {
+  text-align: left;
+}
+
+:is(
+    .app-root[data-ui-theme='nova'],
+    .app-root[data-ui-theme='cloudscape'],
+    .app-root[data-ui-theme='coinbase']
+  )
+  th.column-range
+  button {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+:is(
+    .app-root[data-ui-theme='nova'],
+    .app-root[data-ui-theme='cloudscape'],
+    .app-root[data-ui-theme='coinbase']
+  )
+  th.column-range
+  .sort-label {
+  text-align: left;
+}
+
+:is(
+    .app-root[data-ui-theme='nova'],
+    .app-root[data-ui-theme='cloudscape'],
+    .app-root[data-ui-theme='coinbase']
+  )
+  td.column-range
+  .range-cell {
+  align-items: flex-start;
+}
+
+:is(
+    .app-root[data-ui-theme='nova'],
+    .app-root[data-ui-theme='cloudscape'],
+    .app-root[data-ui-theme='coinbase']
+  )
+  td.column-range
+  .range-cell
+  small {
+  text-align: left;
+}
+
+/* Every system has its own mobile expression: cards, rows, resources, or market tiles. */
+:where(.app-root[data-ui-theme]:not([data-ui-theme='tangible']))[data-layout='mobile']
+  .review-stage {
+  background: var(--theme-layer-accent);
+}
+
+.app-root[data-ui-theme='nova'][data-layout='mobile'] .app-shell {
+  padding-top: 12px;
+  border-top-width: 4px;
+  box-shadow: 0 0 28px rgba(0, 0, 0, 0.12);
+}
+
+.app-root[data-ui-theme='nova'][data-layout='mobile'] .topbar {
+  padding-bottom: 12px;
+}
+
+.app-root[data-ui-theme='nova'][data-layout='mobile'] .welcome {
+  margin-top: 32px;
+  padding: 0 0 24px 16px;
+  border-left-width: 3px;
+}
+
+.app-root[data-ui-theme='nova'][data-layout='mobile'] .welcome h1 {
+  align-items: flex-start;
+  gap: 2px;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: left;
+}
+
+.app-root[data-ui-theme='nova'][data-layout='mobile'] .welcome h1 em {
+  padding: 0;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.app-root[data-ui-theme='nova'][data-layout='mobile'] .tabs {
+  gap: 6px;
+}
+
+.app-root[data-ui-theme='nova'][data-layout='mobile'] .tab {
+  min-height: 40px;
+  padding: 0 12px;
+  font-size: 14px;
+}
+
+.app-root[data-ui-theme='nova'][data-layout='mobile'] .view-toolbar {
+  padding: 12px;
+}
+
+.app-root[data-ui-theme='nova'][data-layout='mobile'] .operational-views,
+.app-root[data-ui-theme='carbon'][data-layout='mobile'] .operational-views {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  scrollbar-width: none;
+}
+
+.app-root[data-ui-theme='nova'][data-layout='mobile'] .view-filter,
+.app-root[data-ui-theme='carbon'][data-layout='mobile'] .view-filter {
+  flex: 0 0 auto;
+}
+
+.app-root[data-ui-theme='nova'][data-layout='mobile'] .mobile-tools {
+  margin-top: 12px;
+}
+
+.app-root[data-ui-theme='nova'][data-layout='mobile'] .mobile-card-region {
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.app-root[data-ui-theme='nova'] .position-card {
+  border: 1px solid #b8b8b8;
+  border-top: 3px solid #1e78a8;
+  border-radius: 2px;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.app-root[data-ui-theme='nova'] .position-card:hover,
+.app-root[data-ui-theme='nova'] .position-card:focus-within {
+  transform: none;
+  border-color: #1e78a8;
+  box-shadow: 0 4px 12px rgba(30, 120, 168, 0.12);
+}
+
+.app-root[data-ui-theme='carbon'][data-layout='mobile'] .app-shell {
+  padding-top: 0;
+  background: #f4f4f4;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+}
+
+.app-root[data-ui-theme='carbon'][data-layout='mobile'] .topbar {
+  min-height: 56px;
+  margin: 0 -16px;
+  padding: 0 16px;
+}
+
+.app-root[data-ui-theme='carbon'][data-layout='mobile'] .welcome {
+  margin: 0 -16px;
+  padding: 32px 16px 24px;
+}
+
+.app-root[data-ui-theme='carbon'][data-layout='mobile'] .welcome h1 {
+  align-items: flex-start;
+  gap: 2px;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: left;
+}
+
+.app-root[data-ui-theme='carbon'][data-layout='mobile'] .welcome h1 em {
+  padding: 0;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.app-root[data-ui-theme='carbon'][data-layout='mobile'] .workspace-head {
+  margin-top: 32px;
+}
+
+.app-root[data-ui-theme='carbon'][data-layout='mobile'] .tabs {
+  gap: 0;
+}
+
+.app-root[data-ui-theme='carbon'][data-layout='mobile'] .tab {
+  min-width: 0;
+  flex: 1;
+  padding: 0 12px;
+  font-size: 14px;
+}
+
+.app-root[data-ui-theme='carbon'][data-layout='mobile'] .view-toolbar {
+  padding: 12px;
+}
+
+.app-root[data-ui-theme='carbon'][data-layout='mobile'] .mobile-tools {
+  margin-top: 12px;
+}
+
+.app-root[data-ui-theme='carbon'][data-layout='mobile'] .mobile-card-region {
+  gap: 1px;
+  margin-top: 0;
+  padding: 1px 0;
+  border: 0;
+  border-radius: 0;
+  background: #c6c6c6;
+  box-shadow: none;
+}
+
+.app-root[data-ui-theme='carbon'] .position-card {
+  padding: 0 16px;
+  border: 0;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.app-root[data-ui-theme='carbon'] .position-card:hover,
+.app-root[data-ui-theme='carbon'] .position-card:focus-within {
+  transform: none;
+  background: #e8e8e8;
+  box-shadow: inset 4px 0 0 #0f62fe;
+}
+
+.app-root[data-ui-theme='carbon'] .position-card.source-selected {
+  background: #edf5ff;
+  box-shadow: inset 4px 0 0 #0f62fe;
+}
+
+.app-root[data-ui-theme='carbon'][data-layout='mobile'] .pagination {
+  padding-left: 0;
+  border-top: 1px solid #8d8d8d;
+}
+
+.app-root[data-ui-theme='carbon'][data-layout='mobile'] .pagination-main {
+  gap: 4px;
+}
+
+.app-root[data-ui-theme='carbon'][data-layout='mobile']
+  .pagination
+  :is(.icon-button, .page-buttons button) {
+  width: 32px;
+}
+
+.app-root[data-ui-theme='cloudscape'][data-layout='mobile'] .app-shell {
+  padding-top: 0;
+  background: #f2f3f3;
+  box-shadow: 0 0 28px rgba(15, 20, 25, 0.16);
+}
+
+.app-root[data-ui-theme='cloudscape'][data-layout='mobile'] .topbar {
+  min-height: 56px;
+  margin: 0 -16px;
+  padding: 0 16px;
+}
+
+.app-root[data-ui-theme='cloudscape'][data-layout='mobile'] .welcome {
+  margin-top: 28px;
+  padding-bottom: 24px;
+}
+
+.app-root[data-ui-theme='cloudscape'][data-layout='mobile'] .welcome h1 {
+  align-items: flex-start;
+  gap: 2px;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: left;
+}
+
+.app-root[data-ui-theme='cloudscape'][data-layout='mobile'] .welcome h1 em {
+  padding: 0;
+  font-size: 30px;
+  line-height: 38px;
+}
+
+.app-root[data-ui-theme='cloudscape'][data-layout='mobile'] .workspace-head {
+  margin-top: 0;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid #b6bec9;
+  border-radius: 12px;
+}
+
+.app-root[data-ui-theme='cloudscape'][data-layout='mobile'] .tabs {
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.app-root[data-ui-theme='cloudscape'][data-layout='mobile'] .tab {
+  min-height: 36px;
+  padding-right: 2px;
+  padding-left: 2px;
+  font-size: 13px;
+}
+
+.app-root[data-ui-theme='cloudscape'][data-layout='mobile'] .view-toolbar {
+  margin-top: 12px;
+  padding-top: 12px;
+}
+
+.app-root[data-ui-theme='cloudscape'][data-layout='mobile'] .operational-views,
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .operational-views {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  scrollbar-width: none;
+}
+
+.app-root[data-ui-theme='cloudscape'][data-layout='mobile'] .view-filter,
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .view-filter {
+  flex: 0 0 auto;
+}
+
+.app-root[data-ui-theme='cloudscape'][data-layout='mobile'] .mobile-tools {
+  margin-top: 12px;
+}
+
+.app-root[data-ui-theme='cloudscape'][data-layout='mobile'] .mobile-card-region {
+  gap: 0;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid #b6bec9;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(15, 20, 25, 0.08);
+}
+
+.app-root[data-ui-theme='cloudscape'] .position-card {
+  padding: 0 16px;
+  border: 0;
+  border-bottom: 1px solid #b6bec9;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.app-root[data-ui-theme='cloudscape'] .position-card:last-child {
+  border-bottom: 0;
+}
+
+.app-root[data-ui-theme='cloudscape'] .position-card:hover,
+.app-root[data-ui-theme='cloudscape'] .position-card:focus-within {
+  transform: none;
+  background: #f7fbff;
+  box-shadow: inset 3px 0 0 #0972d3;
+}
+
+.app-root[data-ui-theme='cloudscape'] .position-card.source-selected {
+  background: #e9f3fc;
+  box-shadow: inset 3px 0 0 #0972d3;
+}
+
+.app-root[data-ui-theme='cloudscape'][data-layout='mobile'] .card-section {
+  border-color: #e9ebed;
+}
+
+.app-root[data-ui-theme='cloudscape'][data-layout='mobile'] .pagination {
+  margin-top: 16px;
+  border: 1px solid #b6bec9;
+  border-radius: 12px;
+}
+
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .app-shell {
+  padding-top: 16px;
+  background: #ffffff;
+  box-shadow: 0 0 32px rgba(10, 11, 13, 0.12);
+}
+
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .topbar {
+  padding-bottom: 16px;
+}
+
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .welcome {
+  margin: 16px -16px 0;
+  padding: 40px 16px 44px;
+}
+
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .welcome h1 {
+  align-items: flex-start;
+  gap: 2px;
+  font-size: 13px;
+  line-height: 20px;
+  text-align: left;
+}
+
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .welcome h1 em {
+  padding: 0;
+  font-size: 38px;
+  line-height: 44px;
+  letter-spacing: -0.8px;
+}
+
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .workspace-head {
+  margin-top: 36px;
+}
+
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .workspace-title-row h2 {
+  font-size: 28px;
+  line-height: 34px;
+}
+
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .tabs {
+  width: 100%;
+  gap: 3px;
+  margin-top: 20px;
+}
+
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .tab {
+  min-width: 0;
+  min-height: 40px;
+  padding: 0 12px;
+  flex: 1;
+  font-size: 13px;
+}
+
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .view-toolbar {
+  margin-top: 20px;
+}
+
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .mobile-tools {
+  margin-top: 16px;
+}
+
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .mobile-card-region {
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.app-root[data-ui-theme='coinbase'] .position-card {
+  padding: 0 18px;
+  overflow: hidden;
+  border: 1px solid #d6dae1;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.app-root[data-ui-theme='coinbase'] .position-card:hover,
+.app-root[data-ui-theme='coinbase'] .position-card:focus-within {
+  transform: none;
+  border-color: #0052ff;
+  background: #f8faff;
+  box-shadow: 0 8px 24px rgba(0, 82, 255, 0.1);
+}
+
+.app-root[data-ui-theme='coinbase'] .position-card.source-selected {
+  border-color: #0052ff;
+  background: #f0f4ff;
+  box-shadow: inset 0 0 0 1px #0052ff;
+}
+
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .field-label {
+  color: #5b616e;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .card-section {
+  padding: 16px 0;
+  border-color: #eef0f3;
+}
+
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .card-actions {
+  padding: 18px 0;
+}
+
+.app-root[data-ui-theme='coinbase'][data-layout='mobile'] .pagination {
+  margin-top: 20px;
+  padding: 0;
+  border-top: 0;
+}
+
+/* Alternative systems share a compact mobile hierarchy without changing DS Tangible. */
+:is(
+    .app-root[data-ui-theme='nova'],
+    .app-root[data-ui-theme='carbon'],
+    .app-root[data-ui-theme='cloudscape'],
+    .app-root[data-ui-theme='coinbase']
+  )[data-layout='mobile']
+  .workspace-title-row {
+  align-items: flex-start;
+  gap: 12px;
+}
+
+:is(
+    .app-root[data-ui-theme='nova'],
+    .app-root[data-ui-theme='carbon'],
+    .app-root[data-ui-theme='cloudscape'],
+    .app-root[data-ui-theme='coinbase']
+  )[data-layout='mobile']
+  .workspace-title-row
+  h2 {
+  min-width: 0;
+  flex: 1 1 auto;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+:is(
+    .app-root[data-ui-theme='nova'],
+    .app-root[data-ui-theme='carbon'],
+    .app-root[data-ui-theme='cloudscape'],
+    .app-root[data-ui-theme='coinbase']
+  )[data-layout='mobile']
+  .freshness {
+  margin-top: 3px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+:is(
+    .app-root[data-ui-theme='nova'],
+    .app-root[data-ui-theme='carbon'],
+    .app-root[data-ui-theme='cloudscape'],
+    .app-root[data-ui-theme='coinbase']
+  )[data-layout='mobile']
+  .operational-views {
+  width: 100%;
+  overflow: visible;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+:is(
+    .app-root[data-ui-theme='nova'],
+    .app-root[data-ui-theme='carbon'],
+    .app-root[data-ui-theme='cloudscape'],
+    .app-root[data-ui-theme='coinbase']
+  )[data-layout='mobile']
+  .view-filter {
+  max-width: 100%;
+  min-height: 32px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  flex: 0 1 auto;
+  line-height: 16px;
+}
+
+.app-root[data-ui-theme='carbon'][data-layout='mobile'] .view-filter {
+  border-right: 1px solid #8d8d8d;
+}
+
+@media (max-width: 1220px) and (min-width: 721px) {
+  .app-root[data-ui-theme='carbon'] .topbar {
+    margin-right: -32px;
+    margin-left: -32px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  .app-root[data-ui-theme='carbon'] .welcome {
+    margin-right: -32px;
+    margin-left: -32px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  .app-root[data-ui-theme='cloudscape'] .topbar {
+    margin-right: -32px;
+    margin-left: -32px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  .app-root[data-ui-theme='coinbase'] .welcome {
+    margin-right: -32px;
+    margin-left: -32px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  :where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .operational-views {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+  }
+
+  :where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) .view-filter {
+    flex: 0 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) *,
+  :where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) *::before,
+  :where(.app-root[data-ui-theme]:not([data-ui-theme='tangible'])) *::after {
+    scroll-behavior: auto !important;
+  }
+}
