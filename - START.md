@@ -1,6 +1,6 @@
 # Tangible website runbook
 
-This repository contains an interactive design-assignment prototype that uses synthetic data. It does not connect to Tangible production systems.
+Tangible commissioned the redesign of its advisor positions workspace. This repository contains the interactive reference implementation, which uses synthetic data and does not connect to Tangible production systems.
 
 ## Prerequisites
 

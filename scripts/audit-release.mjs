@@ -31,13 +31,8 @@ const ignoredDirectories = new Set([
   'playwright-report',
   'test-results',
 ]);
-const forbiddenNames = [
-  'AGENTS.md',
-  '- GITHUB FLOW.md',
-  '- KNOWLEDGE',
-  '- PROMPTS.md',
-  'Senior UX-UI Designer — Design Assignment.pdf',
-];
+const forbiddenNames = ['AGENTS.md', '- GITHUB FLOW.md', '- KNOWLEDGE', '- PROMPTS.md'];
+const forbiddenExtensions = new Set(['.pdf']);
 const textExtensions = new Set([
   '.css',
   '.html',
@@ -82,6 +77,9 @@ for (const file of files) {
   if (!allowedTopLevel.has(topLevel)) failures.push(`${path}: top-level path is not allowlisted`);
   if (forbiddenNames.some((name) => path.includes(name))) {
     failures.push(`${path}: forbidden internal source`);
+  }
+  if (forbiddenExtensions.has(extname(path).toLowerCase())) {
+    failures.push(`${path}: forbidden document type`);
   }
 
   const stats = await lstat(file);

@@ -2,9 +2,9 @@
 
 [Open the live website](https://dawidskinder.github.io/tangible/)
 
-This repository contains the interactive implementation of a Senior UX/UI Designer assignment for Tangible. The work redesigns an advisor's private-market positions grid so the advisor can locate a client position, understand its liquidity state, and enter the correct next workflow with less ambiguity.
+Tangible commissioned this redesign of its advisor positions workspace. This repository contains the interactive reference implementation, which helps an advisor locate a client position, understand its liquidity state, and enter the correct next workflow with less ambiguity.
 
-The implementation extends the requested grid deliverable into a responsive website. It uses deterministic synthetic data and does not connect to Tangible systems.
+The project extends the original positions grid into a responsive website. It uses deterministic synthetic data and does not connect to Tangible production systems.
 
 ## Included capabilities
 
@@ -55,6 +55,6 @@ See [- START.md](./-%20START.md) for setup, operation, diagnostics, and troubles
 - All position, client, account, valuation, and workflow records are synthetic fixtures.
 - Row actions demonstrate state and handoff behavior. They do not execute transactions.
 - Market ranges, permissions, lifecycle rules, and backend contracts require validation against Tangible's production model.
-- Search engines receive explicit no-index directives because this is an assessment prototype.
+- Search engines receive explicit no-index directives because the website is intended for direct product review.
 
-Tangible received the complete design rationale, Figma guide, change matrix, engineering handover, data contract, validation evidence, and a frozen copy of this source through a separate private handover repository.
+The complete design rationale, Figma specifications, change matrix, engineering handover, data contract, validation evidence, and a frozen source snapshot are maintained in a separate private handover repository.
