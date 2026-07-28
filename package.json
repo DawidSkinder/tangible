@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Interactive reference implementation of the Tangible advisor positions grid design assignment.",
+  "description": "Interactive reference implementation of Tangible's redesigned advisor positions workspace.",
   "scripts": {
     "setup": "npm ci && npx playwright install webkit",
     "dev": "vite --host 127.0.0.1",
